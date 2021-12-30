@@ -1,2 +1,2 @@
-# json-dynamodb-bulk-upload
+# dynamodb-upload-json
 Upload JSON Data in Bulk to a DynamoDB using CLI
