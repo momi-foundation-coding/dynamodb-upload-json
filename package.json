@@ -4,7 +4,11 @@
   "description": "Upload JSON Data in Bulk to a DynamoDB using CLI",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha"
+    "start:dev": "node src/index.js",
+    "start": "node src/index.js",
+    "build": "npm run mkdir-lib && babel src --presets minify --out-dir lib",
+    "test": "mocha",
+    "mkdir-lib": "sh mkdir.sh lib"
   },
   "repository": {
     "type": "git",
@@ -23,5 +27,16 @@
   "bugs": {
     "url": "https://github.com/kemboijs/json-dynamodb-bulk-upload/issues"
   },
-  "homepage": "https://github.com/kemboijs/json-dynamodb-bulk-upload#readme"
+  "files": [
+    "README.md",
+    "LICENSE",
+    "src",
+    "lib/",
+    "package.json"
+  ],
+  "homepage": "https://github.com/kemboijs/json-dynamodb-bulk-upload#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1048.0",
+    "dynamodb-data-types": "^4.0.0"
+  }
 }
