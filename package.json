@@ -1,0 +1,27 @@
+{
+  "name": "json-dynamodb-bulk-upload",
+  "version": "0.1.0",
+  "description": "Upload JSON Data in Bulk to a DynamoDB using CLI",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kemboijs/json-dynamodb-bulk-upload.git"
+  },
+  "keywords": [
+    "dynamodb",
+    "json",
+    "jsondata",
+    "bulk-upload-json",
+    "aws",
+    "dynamo"
+  ],
+  "author": "Ezrqn Kemboi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kemboijs/json-dynamodb-bulk-upload/issues"
+  },
+  "homepage": "https://github.com/kemboijs/json-dynamodb-bulk-upload#readme"
+}
