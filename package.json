@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start:dev": "node src/index.js",
-    "start": "node src/index.js",
+    "start": "node lib/index.js",
     "build": "npm run mkdir-lib && babel src --presets minify --out-dir lib",
     "test": "mocha",
     "mkdir-lib": "sh mkdir.sh lib"
@@ -38,5 +38,27 @@
   "dependencies": {
     "aws-sdk": "^2.1048.0",
     "dynamodb-data-types": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "babel-preset-minify": "^0.5.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      [
+        "minify"
+      ]
+    ]
   }
 }
