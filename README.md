@@ -1,3 +1,6 @@
+![npm](https://img.shields.io/npm/v/dynamodb-upload-json)
+![npm](https://img.shields.io/npm/dt/dynamodb-upload-json)
+
 # dynamodb-upload-json
 Upload JSON Data in Bulk to a DynamoDB using CLI
 
