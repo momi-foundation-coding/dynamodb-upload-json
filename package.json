@@ -1,8 +1,11 @@
 {
-  "name": "json-dynamodb-bulk-upload",
-  "version": "0.1.1",
+  "name": "dynamodb-upload-json",
+  "version": "1.0.0",
   "description": "Upload JSON Data in Bulk to a DynamoDB using CLI",
   "main": "src/index.js",
+  "bin": {
+    "dynamodb-upload-json": "src/index.js"
+  },
   "scripts": {
     "start:dev": "node src/index.js",
     "start": "node lib/index.js",
@@ -12,20 +15,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kemboijs/json-dynamodb-bulk-upload.git"
+    "url": "git+https://github.com/kemboijs/dynamodb-upload-json.git"
   },
   "keywords": [
     "dynamodb",
     "json",
     "jsondata",
     "bulk-upload-json",
+    "dynamodb-cli-upload-json",
     "aws",
     "dynamo"
   ],
-  "author": "Ezrqn Kemboi",
+  "author": "Ezrqn Kemboi <ezrqnkemboi@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kemboijs/json-dynamodb-bulk-upload/issues"
+    "url": "https://github.com/kemboijs/dynamodb-upload-json/issues"
   },
   "files": [
     "README.md",
@@ -34,7 +38,7 @@
     "lib/",
     "package.json"
   ],
-  "homepage": "https://github.com/kemboijs/json-dynamodb-bulk-upload#readme",
+  "homepage": "https://github.com/kemboijs/dynamodb-upload-json#readme",
   "dependencies": {
     "aws-sdk": "^2.1048.0",
     "dynamodb-data-types": "^4.0.0"
