@@ -1,6 +1,6 @@
 {
   "name": "dynamodb-upload-json",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Upload JSON Data in Bulk to a DynamoDB using CLI",
   "main": "src/index.js",
   "bin": {
