@@ -37,10 +37,20 @@ const insertDataToDynamo = async (jsonData) => {
 
 const getRecords = (data) => {
   let records = data.map(entity => {
-    // Format element in the correct format for DynamoDB's API 
-    let record = {
+    // Format element in the correct format for DynamoDB's API
+    for(const [key, value] of Object.entries(entity)) {
+      if(Array.isArray(value)) {
+        const item = attr.wrap({ [key]: value}, {types: { [key]:'L' }})
+        entity[key] = item[key]
+      } else {
+        const item = attr.wrap({ [key]: value })
+        entity[key] = item[key]
+      }
+    }
+
+    const record = {
       PutRequest: {
-        Item: attr.wrap(entity)
+        Item: entity
       }
     };
     return record
@@ -59,7 +69,7 @@ const callDynamoDBInsert = async (batches) => {
     // Async function call to write the items to the DB 
     ddb.batchWriteItem(params, function (err, data) {
       if (err) {
-        console.log("Error", err);
+        console.log("Batch Write Error", err);
       } else {
         console.log("Success", data);
       }
@@ -69,10 +79,9 @@ const callDynamoDBInsert = async (batches) => {
 
 const main = async () => {
   try {
-    const data = await insertDataToDynamo(jsonData);
-    console.log("Success, items inserted: ", data);
+    await insertDataToDynamo(jsonData);
   } catch(err) {
-    console.log("Error", err);
+    console.log("Catch Error", err);
   }
 }
 
